@@ -6,6 +6,7 @@
 
 var React = require('react-native');
 // var Relay = require('');
+import App from './components/App';
 
 var {
   AppRegistry,
@@ -17,18 +18,7 @@ var {
 var reactNativeRelayTest = React.createClass({
   render: function() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to Leact Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <App/>
     );
   }
 });
@@ -52,4 +42,4 @@ var styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('reactNativeRelayTest', () => reactNativeRelayTest);
+React.AppRegistry.registerComponent('reactNativeRelayTest', () => reactNativeRelayTest);
