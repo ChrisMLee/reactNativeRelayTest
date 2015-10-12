@@ -25,6 +25,9 @@ class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+      	<Text>
+       		3 HUNNA
+        </Text>
         <Text>
         	{this.props.user.name}
         </Text>
