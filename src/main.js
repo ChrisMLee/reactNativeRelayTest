@@ -6,6 +6,7 @@ import Relay from '../relay/relay';
 
 // var Relay = require('');
 import App from './components/App';
+import AppHomeRoute from './AppHomeRoute';
 
 var {
   AppRegistry,
@@ -21,6 +22,8 @@ var reactNativeRelayTest = React.createClass({
     );
   }
 });
+
+// 561bf1bc7b0eb27c1a560e89
 
 var styles = StyleSheet.create({
   container: {
