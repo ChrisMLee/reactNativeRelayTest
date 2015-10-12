@@ -1,14 +1,18 @@
-import Relay from '../relay/relay';
+import Relay from 'react-relay';
 
-export default class extends Relay.Route {
+class AppHomeRoute extends Relay.Route {
   static queries = {
-    hello: (Component) => Relay.QL`
+    user: (Component) => Relay.QL `
       query {
-        hello {
-          ${Component.getFragment('hello')},
+        user (id: $userId) {
+          ${Component.getFragment('user')}
         }
       }
-    `,
+    `
   };
+
+  static paramDefinitions = {userId: {required: true}};
   static routeName = 'AppHomeRoute';
 }
+
+export default AppHomeRoute;

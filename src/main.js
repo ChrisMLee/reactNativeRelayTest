@@ -1,8 +1,8 @@
 'use strict';
-
+require ('../relay/relay');
 require('react-native-browser-polyfill');
 import React from 'react-native';
-import Relay from '../relay/relay';
+import Relay from 'react-relay';
 
 // var Relay = require('');
 import App from './components/App';
@@ -14,6 +14,11 @@ var {
   Text,
   View,
 } = React;
+
+//causes invariant violation
+Relay.injectNetworkLayer(
+  new Relay.DefaultNetworkLayer('http://localhost:3000/graphql')
+);
 
 var reactNativeRelayTest = React.createClass({
   render: function() {
