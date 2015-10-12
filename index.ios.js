@@ -19,7 +19,7 @@ var reactNativeRelayTest = React.createClass({
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to Deact Native!
+          Welcome to Leact Native!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
