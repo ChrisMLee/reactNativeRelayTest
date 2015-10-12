@@ -15,18 +15,31 @@ var {
   View,
 } = React;
 
-//causes invariant violation
+
 Relay.injectNetworkLayer(
   new Relay.DefaultNetworkLayer('http://localhost:3000/graphql')
 );
 
-var reactNativeRelayTest = React.createClass({
-  render: function() {
+// var reactNativeRelayTest = React.createClass({
+//   render: function() {
+//     return (
+//       <App/>
+//     );
+//   }
+// });
+
+let userId = "561bf1bc7b0eb27c1a560e89";
+
+class RootApp extends React.Component {
+  render() {
     return (
-      <App/>
+      <Relay.RootContainer
+        Component={App}
+        route={new AppHomeRoute({userId: userId})}
+        />
     );
   }
-});
+}
 
 // 561bf1bc7b0eb27c1a560e89
 
@@ -49,4 +62,6 @@ var styles = StyleSheet.create({
   },
 });
 
-React.AppRegistry.registerComponent('reactNativeRelayTest', () => reactNativeRelayTest);
+//React.AppRegistry.registerComponent('reactNativeRelayTest', () => reactNativeRelayTest);
+
+React.AppRegistry.registerComponent('reactNativeRelayTest', () => RootApp);

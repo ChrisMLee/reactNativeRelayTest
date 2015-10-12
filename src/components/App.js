@@ -1,4 +1,6 @@
+require ('../../relay/relay');
 import React from 'react-native';
+import Relay from 'react-relay';
 
 const {
   AppRegistry,
@@ -7,17 +9,48 @@ const {
   View,
 } = React;
 
-export default class App extends React.Component {
+// export default class App extends React.Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <Text>
+//         	YURP
+//         </Text>
+//       </View>
+//     );
+//   }
+// }
+
+class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Text>
-        	THATS LABY
+        	{this.props.user.name}
+        </Text>
+        <Text>
+        	{this.props.user.surname}
+        </Text>
+        <Text>
+        	{this.props.user.team}
         </Text>
       </View>
     );
   }
 }
+
+export default Relay.createContainer(App, {
+  fragments: {
+    user: () => Relay.QL`
+      fragment on User {
+        id
+        name
+        surname
+        team
+      }
+    `
+  }
+});
 
 const styles = StyleSheet.create({
   container: {

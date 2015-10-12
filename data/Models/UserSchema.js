@@ -23,6 +23,7 @@ exports.UserSchema = User;
 function getUserById(id) {
   return new Promise((resolve, reject) => {
     User.findOne({id:id}).exec((err,res) => {
+      console.log('getUserById was called!');
       err ? reject(err) : resolve(res);
     });
   });
