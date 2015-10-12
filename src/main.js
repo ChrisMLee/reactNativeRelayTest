@@ -1,10 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
 
-var React = require('react-native');
+require('react-native-browser-polyfill');
+import React from 'react-native';
+import Relay from '../relay/relay';
+
 // var Relay = require('');
 import App from './components/App';
 
